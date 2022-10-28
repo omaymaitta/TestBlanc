@@ -1,5 +1,7 @@
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,8 +36,44 @@ public class Figures extends Dessin {
     public List<Dessin> getChilds(){
         return dessins;
     }
-    public void serialise() throws FileNotFoundException {
-        FileOutputStream fos = new FileOutputStream("serialise.serial");
+    public void serialise(Dessin d) throws FileNotFoundException {
+        try {
+            FileOutputStream fos = new FileOutputStream("dessin.serial");
+            ObjectOutputStream oos= null;
+            try {
+                oos = new ObjectOutputStream(fos);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            try {
+                oos.writeObject(d);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            try {
+                oos.flush();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            try {
+                oos.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            System.out.println( " l'objet dessin a ete serialise");
 
+
+        }catch(IOException e){
+            e.printStackTrace();
+        }
+
+
+    }
+
+    @Override
+    public String toString() {
+        return "Figures{" +
+                "dessins=" + dessins +
+                '}'+"\n";
     }
 }

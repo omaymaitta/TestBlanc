@@ -15,7 +15,49 @@ public class Rectangle extends Dessin {
 
     @Override
     void update(ParametrageObsarvable po) {
-        int etatNew=((ParametrageObsarvableImpl)po).borderSize+1;
-        System.out.println("la taille du contour est changée"+etatNew);
+
+        System.out.println("l'etat est changée");
+    }
+
+    public Rectangle(Point coinGauche, double largeur, double hauteur) {
+        this.coinGauche = coinGauche;
+        this.largeur = largeur;
+        this.hauteur = hauteur;
+    }
+
+    public Rectangle() {
+    }
+
+    public Point getCoinGauche() {
+        return coinGauche;
+    }
+
+    public void setCoinGauche(Point coinGauche) {
+        this.coinGauche = coinGauche;
+    }
+
+    public double getLargeur() {
+        return largeur;
+    }
+
+    public void setLargeur(double largeur) {
+        this.largeur = largeur;
+    }
+
+    public double getHauteur() {
+        return hauteur;
+    }
+
+    public void setHauteur(double hauteur) {
+        this.hauteur = hauteur;
+    }
+
+    @Override
+    public String toString() {
+        return "Rectangle{" +
+                "coinGauche=" + coinGauche +
+                ", largeur=" + largeur +
+                ", hauteur=" + hauteur +
+                '}';
     }
 }

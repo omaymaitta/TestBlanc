@@ -13,7 +13,35 @@ public class Cercle extends Dessin{
 
     @Override
     void update(ParametrageObsarvable po) {
-        int etatNew=((ParametrageObsarvableImpl)po).getBorderColor()+1;
-        System.out.println("la couleur du contour est changée"+etatNew);
+        System.out.println("l'etat est changée");
+    }
+
+    public Cercle(Point center, double rayon) {
+        this.center = center;
+        this.rayon = rayon;
+    }
+
+    public Point getCenter() {
+        return center;
+    }
+
+    public void setCenter(Point center) {
+        this.center = center;
+    }
+
+    public double getRayon() {
+        return rayon;
+    }
+
+    public void setRayon(double rayon) {
+        this.rayon = rayon;
+    }
+
+    @Override
+    public String toString() {
+        return "Cercle{" +
+                "center=" + center +
+                ", rayon=" + rayon +
+                '}';
     }
 }

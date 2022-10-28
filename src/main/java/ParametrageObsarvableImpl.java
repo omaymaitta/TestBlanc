@@ -23,9 +23,9 @@ public class ParametrageObsarvableImpl implements ParametrageObsarvable {
         }
     }
 
-    public ParametrageObsarvableImpl(int colorFill) {
-        this.colorFill = colorFill;
+    public ParametrageObsarvableImpl() {
     }
+
 
     public int getBorderSize() {
         return borderSize;
